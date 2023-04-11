@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #222327;
+    --text-color: #fff;
+    --main-color: #29fd53;
+}
+
+body {
+    min-height: 100vh;
+    background: #F2F2F2;
+}
+/* navbar */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f2f2f2e0;
+    padding: 17px 12%;
+    transition: all .50s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i{
+    color: #EC5B24;
+    font-size: 28px;
+    margin-right: 3px;
+}
+
+.logo span {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #EC5B24;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0 30px;
+    transition: all .50s ease;
+    color: black;
+}
+
+.navbar :hover {
+    color: #EC5B24;
+}
+
+.navbar a.active {
+    color: #EC5B24;
+    font-weight: 600;
+}
+
+.menu-icon {
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    header {
+        padding: 14px 2%;
+    }
+
+    .navbar a {
+        padding: 5px 0;
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 29vh;
+        background: #f2f2f2e0;;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+    }
+    .navbar a {
+        display: block;
+        margin: 12px 0;
+        padding: 0 25px;
+        transition: all .50s ease;
+    }
+    .navbar a:hover {
+        transform: translateY(5px);
+    }
+    .navbar a.active {
+        color: #EC5B24;;
+    }
+    .navbar.open {
+        right: 2%;
+    }
+}
+
+/* heading and input pnr*/
+.bg-banner {
+    width: 100%;
+    height: 328px;
+    background: #901F4A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-banner h1 {
+    color: #fff;
+    font-weight: 440;
+    padding: 7px;
+}
+
+.form {
+    width: 60%;
+    margin-top: 20px;
+}
+
+input {
+    border: none;
+    font-size: 20px;
+    width: 62%;
+    padding: 20px;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+input:focus {
+    outline: none;
+}
+
+#submit-btn {
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    background: #EC5B24;
+    color: #fff;
+    padding: 20px;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+/* showing pnr result */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+/* succes result*/
+#success {
+    display: none;
+    width: 38%;
+    height: 320px;
+    border-radius: 12px;
+    background: #fff;
+    padding: 7px;
+}
+
+#success h1 {
+    text-align: center;
+}
+
+#train-num {
+    padding-left: 3px;
+    padding-top: 5px;
+    font-size: 17px;
+}
+
+#train-name {
+    padding-left: 3px;
+    font-size: 17px;
+}
+
+#success p {
+    text-align: end;
+}
+
+#date-time span {
+    display: inline-block;
+    width: 33%;
+}
+
+#success h2 {
+    text-align: center;
+    margin: 5px 0;
+}
+
+#traveller-info {
+    width: 40%;
+    height: 85px;
+    margin-top: 8px;
+    margin-left: 5%;
+    background: #F2F2F2;
+    overflow-y: scroll;
+}
+
+/* error result*/
+#error {
+    display: none;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot-Your-Train</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/png" href="/images/train.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <div class="loader"></div>
+    {{>navbar}}
+
+    <img src="images/bgimg.jpeg" alt="banner-image" class="banner-img">
+    <img src="images/engine.png" alt="png" class="banner-line-img">
+    <h1 class="banner-line">Spot Your Train</h1>
+
+    {{!-- search box --}}
+    <div class="headings">
+        <div><a href="/" class="first">Between Stations</a></div>
+        <div><a href="/status" class="second">Running Status</a></div>
+    </div>
+
+    <div class="search-box">
+        <form>
+            <div class="from-to">
+                <label>From</label>
+                <label>To</label>
+            </div>
+
+            <input type="text" id="from" name="beginfeild" required placeholder="Leaving From">
+            <input type="text" id="to" name="endfeild" required placeholder="Going To">
+            <button type="button" id="submit-btn">Search</button>
+        </form>
+    </div>
+
+    <div class="search-filter">
+        <div id="left"></div>
+        <div class="seperator"></div>
+        <div id="right"></div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script>
+        const fromSearch = document.getElementById('from');
+        const toSearch = document.getElementById('to');
+        const leftfilter = document.getElementById('left');
+        const rightfilter = document.getElementById('right');
+        const urilink = 'https://gist.githubusercontent.com/apsdehal/11393083/raw/8faed8c05737c62fa04286cce21312951652fff4/Railway%2520Stations';
+
+        document.body.addEventListener('click',function() {
+            leftfilter.style.display = 'none';
+            rightfilter.style.display = 'none';
+        });
+
+        fromSearch.addEventListener('input',async function() {
+            if(fromSearch && fromSearch.value) {
+                leftfilter.style.display = 'block';
+                const respone = await fetch(urilink);
+                const data = await respone.json();
+                const data1 = data.data;
+
+                const result = data1.filter((element) => {
+                    return element && element.name && element.name.toLowerCase().includes(fromSearch.value);
+                });
+
+                result.slice(0,4).map((ele) => {
+                    const raw = document.createElement('div');
+                    raw.classList.add('eachData');
+                    const node = document.createTextNode(ele.name);
+                    raw.appendChild(node);
+                    leftfilter.prepend(raw);
+
+                    raw.addEventListener('click', function(event) {
+                        fromSearch.value = event.target.innerText;
+                    });
+                })
+            }
+            else {
+                leftfilter.style.display = 'none';
+            }
+        });
+
+        toSearch.addEventListener('input',async function() {
+            if(toSearch && toSearch.value) {
+                rightfilter.style.display = 'block';
+                const respone = await fetch(urilink);
+                const data = await respone.json();
+                const data1 = data.data;
+
+                const result = data1.filter((element) => {
+                    return element && element.name && element.name.toLowerCase().includes(toSearch.value);
+                });
+
+                result.slice(0,4).map((ele) => {
+                    const raw = document.createElement('div');
+                    raw.classList.add('eachData');
+                    const node = document.createTextNode(ele.name);
+                    raw.appendChild(node);
+                    rightfilter.prepend(raw);
+
+                    raw.addEventListener('click', function(event) {
+                        toSearch.value = event.target.innerText;
+                    });
+                });
+            }
+            else {
+                rightfilter.style.display = 'none';
+            }
+        });
+
+
+    </script>
+</body>
+</html>

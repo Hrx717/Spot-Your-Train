@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot-Your-Train</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="styles/resultStyles.css">
+    <link rel="icon" type="image/png" href="/images/train.png">
+<body>
+    {{>navbar}}
+
+    <div id="main-content">
+        <h1>Trains Between Stations</h1>
+
+        <h3>{{where}}</h3>
+
+        {{!-- <div class="main-div">
+            <div class="leftside">
+                <div class="train-name">14631 DEHRADUN - AMRITSAR Express</div>
+
+                <div class="runs-on">
+                    <span>Runs On:-</span>
+                    <span>M,T,W,T,F,S,S</span>
+                </div>
+            </div>
+            
+            <div class="partition"></div>
+
+            <div class="rightside">
+                <div class="start">00:20SRE</div>
+                <div class="connect">
+                    <div class="circle1"></div>
+                    <div class="line"></div>
+                    <div class="circle2"></div>
+                </div>
+                <div class="end">02:32 CDG</div>
+            </div>
+        </div> --}}
+    </div>
+    
+    <script src="scripts/resultScript.js"></script>
+</body>
+</html>

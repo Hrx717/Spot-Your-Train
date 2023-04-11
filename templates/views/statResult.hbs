@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot-Your-Train</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="styles/statResStyles.css">
+    <link rel="icon" type="image/png" href="/images/train.png">
+<body>
+    {{>navbar}}
+
+    <div id="main-content">
+        <h1>Live Running Status</h1>
+        <h3 id="name-num"></h3>
+
+        <div class="live-stat">
+            <span>Currnetly At:</span>
+            <span id="live-data"></span>
+        </div>
+
+
+        <div id="container">
+            <div class="base-headings">
+            <span>Station</span>
+            <span>
+                <div>Arrival Status</div>
+                <div class="info">Actual/Scheduled</div>
+            </span>
+            <span>
+                <div>Depart Status</div>
+                <div class="info">Actual/Scheduled</div>
+            </span>
+            <span>Delay</span>
+            </div>
+
+            <div id="data-row"></div>
+
+        </div>
+        
+    </div>
+    
+    <script src="scripts/statResScript.js"></script>
+</body>
+</html>

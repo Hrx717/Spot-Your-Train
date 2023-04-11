@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #222327;
+    --text-color: #fff;
+    --main-color: #29fd53;
+}
+
+body {
+    min-height: 100vh;
+    background: #F2F2F2;
+}
+/* navbar */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f2f2f2e0;
+    padding: 17px 12%;
+    transition: all .50s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i{
+    color: #EC5B24;
+    font-size: 28px;
+    margin-right: 3px;
+}
+
+.logo span {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #EC5B24;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0 30px;
+    transition: all .50s ease;
+    color: black;
+}
+
+.navbar :hover {
+    color: #EC5B24;
+}
+
+.navbar a.active {
+    color: #EC5B24;
+    font-weight: 600;
+}
+
+.menu-icon {
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    header {
+        padding: 14px 2%;
+    }
+
+    .navbar a {
+        padding: 5px 0;
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 29vh;
+        background: #f2f2f2e0;;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+    }
+    .navbar a {
+        display: block;
+        margin: 12px 0;
+        padding: 0 25px;
+        transition: all .50s ease;
+    }
+    .navbar a:hover {
+        transform: translateY(5px);
+    }
+    .navbar a.active {
+        color: #EC5B24;;
+    }
+    .navbar.open {
+        right: 2%;
+    }
+}
+
+/* main top heading */
+#main-content {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+}
+
+#main-content h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#main-content h3 {
+    text-align: center;
+}
+
+.main-div {
+    width: 54%;
+    height: auto;
+    padding-top: 20px;
+    background: #fff;
+    margin: 25px 0;
+    margin-left: 6%;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    display: flex;
+    flex-direction: row;
+}
+
+.leftside {
+    width: 45%;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.train-name {
+    color: #EC5B24;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 15px;
+}
+
+.runs-on {
+    padding: 3px;
+    margin: 7px 0;
+}
+
+.partition {
+    margin-top: 15px;
+    height: 65px;
+    border-right: 1px solid black;
+}
+
+.rightside {
+    margin-top: 25px;
+    margin-left: 38px;
+    width: 55%;
+    display: flex;
+    flex-direction: row;
+}
+
+.start {
+    margin: 0 13px;
+    padding: 3px;
+    font-size: 17px;
+}
+
+.end {
+    margin-left: 10px;
+    padding: 3px;
+    font-size: 17px;
+}
+
+.connect {
+    width: 30%;
+    height: 10px;
+    display: flex;
+    margin: 10px 5px;
+    flex-direction: row;
+}
+
+.circle1 {
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color: rgb(117, 117, 117);
+}
+
+.circle2 {
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color: rgb(117, 117, 117);
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    padding: 1px;
+    margin-top: 2px;
+    background-color: rgb(187, 187, 187);
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot-Your-Train</title>
+    <link rel="stylesheet" href="styles/pnrStyles.css">
+    <link rel="icon" type="image/png" href="/images/train.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    {{>navbar}}
+    <div class="bg-banner">
+        <h1>PNR Status</h1>
+        <div class="form">
+            <input type="text" id="pnr-num" required placeholder="Enter your 10 digit PNR number">
+            <button type="button" id="submit-btn">Check PNR Status</button>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div id="success">
+            <div id="train-num"></div>
+            <div id="train-name"></div>
+            <p id="date"></p>
+            <p id="chart"></p>
+            <h1 id="stns"></h1>
+
+            <h2>Traveller Info:-</h2>
+            <div id="traveller-info"></div>
+        </div>
+
+        {{!-- <div id="success">
+            <div id="train-num">12045</div>
+            <div id="train-name">NDLS Janshatabdi</div>
+            <p id="date">Journey date: 06:04:2023</p>
+            <p id="chart">Char Prepared</p>
+            <h1 id="stns">Ambala To New Delhi</h1>
+
+            <h2>Traveller Info:-</h2>
+            <div class="traveller-info">
+                <div>Passenger 1: C5/100</div>
+            </div>
+        </div> --}}
+
+        <div id="error"></div>
+    </div>
+
+    <script src="scripts/pnrScript.js"></script>
+</body>
+</html>
