@@ -280,6 +280,7 @@ input:focus {
     margin: 10px 0;
     display: flex;
     justify-content: center;
+    z-index: 15;
 }
 
 #left {
