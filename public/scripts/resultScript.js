@@ -2,7 +2,8 @@ const element = document.getElementById('main-content');
 
 //trains list
 const trainData = async ()=> {
-    const response = await fetch('http://localhost:3000/trains');
+    // const response = await fetch('http://localhost:3000/trains');
+    const response = await fetch(window.location.origin + '/trains');
     const data = await response.json();
 
     //hanle error if get empty array (display entered wrong input)

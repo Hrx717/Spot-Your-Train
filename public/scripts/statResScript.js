@@ -4,7 +4,8 @@ const element = document.getElementById('data-row');
 
 //train headers
 const trainHeaders = async() => {
-    const response = await fetch('http://localhost:3000/live-headers');
+    // const response = await fetch('http://localhost:3000/live-headers');
+    const response = await fetch(window.location.origin + '/live-headers');
     const data = await response.json();
 
     console.log(data);
@@ -22,7 +23,8 @@ const trainHeaders = async() => {
 
 //trains list
 const trainData = async ()=> {
-    const response = await fetch('http://localhost:3000/running');
+    // const response = await fetch('http://localhost:3000/running');
+    const response = await fetch(window.location.origin + '/running');
     const data = await response.json();
 
     //hanle error if get empty array (display entered wrong input)

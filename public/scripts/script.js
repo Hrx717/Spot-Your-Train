@@ -66,7 +66,8 @@ if(submit) {
 
         setTimeout(() => {
             loader.classList.remove('loader-after');
-            let URL = 'http://localhost:3000/result';
+            // let URL = 'http://localhost:3000/result';
+            let URL = window.location.origin + '/result';
             window.location.href = (URL);
         }, 2100);
 

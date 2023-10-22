@@ -36,7 +36,8 @@ submit.onclick = () => {
 
     setTimeout(() => {
         loader.classList.remove('loader-after');
-        let URL = 'http://localhost:3000/live-running';
+        // let URL = 'http://localhost:3000/live-running';
+        let URL = window.location.origin + '/live-running';
         window.location.href = (URL);
     }, 2100);
 }
