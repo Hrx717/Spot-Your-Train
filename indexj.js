@@ -172,6 +172,7 @@ const getLiveStatus = async (number) => {
     .catch(err =>  {
         currentStatus = "";
         name_number = "";
+        timings = [];
         console.log(err);
     });
 }
