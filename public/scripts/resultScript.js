@@ -7,12 +7,13 @@ const trainData = async ()=> {
     const data = await response.json();
 
     //hanle error if get empty array (display entered wrong input)
-    if(data.length == 0) {
+    if(data.length == 0 || data==' ') {
         const error = document.createElement('h2');
         const node = document.createTextNode('No-trains between stations');
         error.appendChild(node);
         error.style.textAlign = 'center';
         element.appendChild(error);
+        return;
     }
 
     for(let i=0; i<data.length; i++) {

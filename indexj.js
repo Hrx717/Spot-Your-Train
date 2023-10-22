@@ -207,8 +207,8 @@ app.get('/about',(req,res) => {
 
 //api's
 app.get('/trains', (req,res)=> {
-    if(result==[]) {
-        result.json('');
+    if(result==[] || result.length==0) {
+        res.json(' ');
     }
     else
     res.json(result);
@@ -219,8 +219,8 @@ app.get('/trains', (req,res)=> {
 // });
 
 app.get('/running', (req,res)=> {
-    if(timings==[]) {
-        res.json('');
+    if(timings==[] || timings.length==0) {
+        res.json(' ');
     }
     else
     res.json(timings);

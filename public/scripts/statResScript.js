@@ -8,9 +8,10 @@ const trainHeaders = async() => {
     const response = await fetch(window.location.origin + '/live-headers');
     const data = await response.json();
 
-    console.log(data);
+    // console.log(data);
     if(data.name_number=="" && data.currentStatus=="") {
         data.name_number = "OOPS! No Train Asscociated With Entered Number/Invalid Input";
+        nodata=true;
     }
     else if(data.currentStatus=="") {
         data.currentStatus = "Not Yet Started";
@@ -28,6 +29,9 @@ const trainData = async ()=> {
     const data = await response.json();
 
     //hanle error if get empty array (display entered wrong input)
+    if(data.length == 0 || data==' ') {
+        return;
+    }
 
     for(let i=0; i<data.length;i++) {
         const temp = data[i];
