@@ -104,7 +104,8 @@ const getLiveStatus = async (number) => {
     let depart_schedule = [];
     let delay = [];
     
-    const statusUrl = `${process.env.SOURCE}${number}/running-status`;
+    // const statusUrl = `${process.env.SOURCE}${number}/running-status`;
+    const statusUrl = `https://www.ixigo.com/trains/${number}/running-status`;
     axios(statusUrl)
     .then(response => {
         const html = response.data;
