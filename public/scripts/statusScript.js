@@ -30,6 +30,7 @@ const clientToServer = async (value)=> {
 
 submit.onclick = () => {
     const value = {num:trainNum.value}
+    console.log(value);
     clientToServer(value);
     let loader = document.querySelector('.loader');
     loader.classList.add('loader-after');

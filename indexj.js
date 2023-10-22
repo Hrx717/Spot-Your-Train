@@ -170,9 +170,8 @@ const getLiveStatus = async (number) => {
         }
     })
     .catch(err =>  {
-        currentStatus = "";
-        name_number = "";
-        timings = [];
+        currentStatus = "NA";
+        name_number = "NA";
         console.log(err);
     });
 }
@@ -220,7 +219,7 @@ app.get('/trains', (req,res)=> {
 // });
 
 app.get('/running', (req,res)=> {
-    if(timings==[] || timings.length==0) {
+    if(timings.length==0) {
         res.json(' ');
     }
     else
